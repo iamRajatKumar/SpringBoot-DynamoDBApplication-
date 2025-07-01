@@ -1,0 +1,21 @@
+Project Requirement:
+
+Generate a Spring Boot project from Spring.io
+add web dependency,lombok  (Reduce boiler platecode getter setter constructor)
+Add aws dependency in pom.xml
+<!-- <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-dynamodb</artifactId>
+    <version>1.12.734</version> <!-- Use latest stable version 
+</dependency> 
+-->
+Add 4 packages:
+config
+Controller
+entity
+repository
+
+
+create a Person class in entity.java
+add this @DynamoDBDocument in person class
+
