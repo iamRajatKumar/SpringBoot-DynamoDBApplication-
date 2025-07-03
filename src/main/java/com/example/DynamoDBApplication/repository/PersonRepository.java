@@ -25,7 +25,7 @@ public class PersonRepository {
         return person;
     }
 
-    public Person getPerson(int personId) {
+    public Person getPerson(String personId) {
         return mapper.load(Person.class, personId);
     }
 

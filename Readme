@@ -17,5 +17,19 @@ repository
 
 
 create a Person class in entity.java
-add this @DynamoDBDocument in person class
+add this @DynamoDBDocument in person class Add Database details
+
+Create DynamoDbconfig.java in config and Add required code as mention to configure Dynamo DB database
+
+Create Repositoey class and add required code
+
+Create Person controller to perform CRUD operations
+
+next create aws account add required details and setup a group with access of DynamoDb
+>> in group add a user 
+
+Open DynamoDb from AWS management console and Create a Table as mention in entity class
+use personId as primary key
+
+
 
