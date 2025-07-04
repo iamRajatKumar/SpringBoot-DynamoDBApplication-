@@ -33,7 +33,6 @@ public class PersonRepository {
         if(person != null){
             mapper.delete(person);
         }
-        
         return "person deleted";
     }
 
@@ -41,7 +40,6 @@ public class PersonRepository {
     // mapper.save(person, buildExpression(person));
     // return "Person Modified";
     // }
-
     // private DynamoDBSaveExpression buildExpression(Person person) {
     // DynamoDBSaveExpression dynamoDBSaveExpression = new DynamoDBSaveExpression();
     // Map<String, ExpectedAttributeValue> expectedAttributeValueMap = new
