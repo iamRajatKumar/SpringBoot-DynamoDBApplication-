@@ -1,5 +1,6 @@
 package com.example.DynamoDBApplication.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.DynamoDBApplication.entity.Person;
 import com.example.DynamoDBApplication.repository.PersonRepository;
-
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*") //connected with angular
 public class PersonController {
 
     // @Autowired
@@ -32,14 +33,13 @@ public class PersonController {
     @PutMapping("/person/{id}")
     public Person updatePerson(@PathVariable String id, @RequestBody Person updatedPerson){
         Person existingPerson= personRepository.getPersonById(id);
-        if(existingPerson != null) {
-        //update code
-        existingPerson.setName(updatedPerson.getName());
-        existingPerson.setEmail(updatedPerson.getEmail());
-        existingPerson.setAddress(updatedPerson.getAddress());
-
-        return personRepository.addPerson(existingPerson);
-        }
+            if(existingPerson != null) {
+            //update code
+            existingPerson.setName(updatedPerson.getName());
+            existingPerson.setEmail(updatedPerson.getEmail());
+            existingPerson.setAddress(updatedPerson.getAddress());
+            return personRepository.addPerson(existingPerson);
+            }
         return null;
     }
 

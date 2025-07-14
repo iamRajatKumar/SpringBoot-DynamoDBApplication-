@@ -35,3 +35,4 @@ build/
 
 # Ignore application.properties with credentials
 application.properties
+src/main/resources/application.properties
