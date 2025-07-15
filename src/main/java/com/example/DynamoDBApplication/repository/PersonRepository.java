@@ -1,8 +1,11 @@
 package com.example.DynamoDBApplication.repository;
 
+import java.util.List;
+
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.example.DynamoDBApplication.entity.Person;
 import lombok.RequiredArgsConstructor;
 
@@ -24,9 +27,10 @@ public class PersonRepository {
         return mapper.load(Person.class, personId);
     }
 
-    // public Person getAllPerson(Person person) {
-    // return mapper.load(person);
-    // }
+    public List<Person> getAllPersons() {
+    return mapper.scan(Person.class, new DynamoDBScanExpression()); 
+    // DynamoDBScanExpression() is used to scan to Database in Person Data
+    }
 
     public String deletePerson(String personId) {
         Person person = mapper.load(Person.class, personId);

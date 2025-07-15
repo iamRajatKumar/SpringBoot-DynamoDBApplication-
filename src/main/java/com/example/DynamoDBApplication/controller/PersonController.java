@@ -1,5 +1,7 @@
 package com.example.DynamoDBApplication.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +25,11 @@ public class PersonController {
     @PostMapping("/person")
     public Person savePerson(@RequestBody Person person){
         return personRepository.addPerson(person);
+    }
+
+    @GetMapping("/person")
+    public List<Person> getAllPersons(){
+        return personRepository.getAllPersons();
     }
 
     @GetMapping("/person/{id}")
